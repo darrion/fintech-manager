@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "081bc35b-a931-41e4-8fd2-2bc686a6c3ab",
+		"name": "Pattern Fi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16284139"
+	},
+	"item": [
+		{
+			"name": "Initialize Database",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"clients\": [\n    {\n      \"first_name\": \"Maddy\",\n      \"last_name\": \"Perez\",\n      \"accounts\": [\n        {\n          \"type\": \"brokerage\",\n          \"value\": 100000\n        }\n      ]\n    },\n    {\n      \"first_name\": \"Rue\",\n      \"last_name\": \"Bennett\",\n      \"accounts\": [\n        {\n          \"type\": \"ira\",\n          \"value\": 150\n        },\n        {\n          \"type\": \"brokerage\",\n          \"value\": 1000\n        }\n      ]\n    },\n    {\n      \"first_name\": \"Nate\",\n      \"last_name\": \"Jacobs\",\n      \"accounts\": []\n    },\n    {\n      \"first_name\": \"Jules\",\n      \"last_name\": \"Vaughn\",\n      \"accounts\": [\n        {\n          \"type\": \"brokerage\",\n          \"value\": 32500\n        }\n      ]\n    }\n  ],\n  \"financial_advisors\": [\n    {\n      \"name\": \"Nick Miller\",\n      \"focus_areas\": [\"financial independence\", \"smb\"]\n    },\n    {\n      \"name\": \"Jessica Day\",\n      \"focus_areas\": [\"retirement\", \"education\"]\n    }\n  ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}:{{port}}/init",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"init"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Advisors",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"clients\": [\n    {\n      \"first_name\": \"Maddy\",\n      \"last_name\": \"Perez\",\n      \"accounts\": [\n        {\n          \"type\": \"brokerage\",\n          \"value\": 100000\n        }\n      ]\n    },\n    {\n      \"first_name\": \"Rue\",\n      \"last_name\": \"Bennett\",\n      \"accounts\": [\n        {\n          \"type\": \"ira\",\n          \"value\": 150\n        },\n        {\n          \"type\": \"brokerage\",\n          \"value\": 1000\n        }\n      ]\n    },\n    {\n      \"first_name\": \"Nate\",\n      \"last_name\": \"Jacobs\",\n      \"accounts\": []\n    },\n    {\n      \"first_name\": \"Jules\",\n      \"last_name\": \"Vaughn\",\n      \"accounts\": [\n        {\n          \"type\": \"brokerage\",\n          \"value\": 32500\n        }\n      ]\n    }\n  ],\n  \"financial_advisors\": [\n    {\n      \"name\": \"Nick Miller\",\n      \"focus_areas\": [\"financial independence\", \"smb\"]\n    },\n    {\n      \"name\": \"Jessica Day\",\n      \"focus_areas\": [\"retirement\", \"education\"]\n    }\n  ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}:{{port}}/advisors?page=1&limit=10",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"advisors"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign Advisor",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"clients\": [\n    {\n      \"first_name\": \"Maddy\",\n      \"last_name\": \"Perez\",\n      \"accounts\": [\n        {\n          \"type\": \"brokerage\",\n          \"value\": 100000\n        }\n      ]\n    },\n    {\n      \"first_name\": \"Rue\",\n      \"last_name\": \"Bennett\",\n      \"accounts\": [\n        {\n          \"type\": \"ira\",\n          \"value\": 150\n        },\n        {\n          \"type\": \"brokerage\",\n          \"value\": 1000\n        }\n      ]\n    },\n    {\n      \"first_name\": \"Nate\",\n      \"last_name\": \"Jacobs\",\n      \"accounts\": []\n    },\n    {\n      \"first_name\": \"Jules\",\n      \"last_name\": \"Vaughn\",\n      \"accounts\": [\n        {\n          \"type\": \"brokerage\",\n          \"value\": 32500\n        }\n      ]\n    }\n  ],\n  \"financial_advisors\": [\n    {\n      \"name\": \"Nick Miller\",\n      \"focus_areas\": [\"financial independence\", \"smb\"]\n    },\n    {\n      \"name\": \"Jessica Day\",\n      \"focus_areas\": [\"retirement\", \"education\"]\n    }\n  ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}:{{port}}/advisor/assign?advisorId=1&clientId=2",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"advisor",
+						"assign"
+					],
+					"query": [
+						{
+							"key": "advisorId",
+							"value": "1"
+						},
+						{
+							"key": "clientId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Clients of Advisor",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"clients\": [\n    {\n      \"first_name\": \"Maddy\",\n      \"last_name\": \"Perez\",\n      \"accounts\": [\n        {\n          \"type\": \"brokerage\",\n          \"value\": 100000\n        }\n      ]\n    },\n    {\n      \"first_name\": \"Rue\",\n      \"last_name\": \"Bennett\",\n      \"accounts\": [\n        {\n          \"type\": \"ira\",\n          \"value\": 150\n        },\n        {\n          \"type\": \"brokerage\",\n          \"value\": 1000\n        }\n      ]\n    },\n    {\n      \"first_name\": \"Nate\",\n      \"last_name\": \"Jacobs\",\n      \"accounts\": []\n    },\n    {\n      \"first_name\": \"Jules\",\n      \"last_name\": \"Vaughn\",\n      \"accounts\": [\n        {\n          \"type\": \"brokerage\",\n          \"value\": 32500\n        }\n      ]\n    }\n  ],\n  \"financial_advisors\": [\n    {\n      \"name\": \"Nick Miller\",\n      \"focus_areas\": [\"financial independence\", \"smb\"]\n    },\n    {\n      \"name\": \"Jessica Day\",\n      \"focus_areas\": [\"retirement\", \"education\"]\n    }\n  ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}:{{port}}/advisor/clients?advisorId=1&page=1&limit=10",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"advisor",
+						"clients"
+					],
+					"query": [
+						{
+							"key": "advisorId",
+							"value": "1"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,53 @@
+{
+  "clients": [
+    {
+      "first_name": "Maddy",
+      "last_name": "Perez",
+      "accounts": [
+        {
+          "type": "brokerage",
+          "value": 100000
+        }
+      ]
+    },
+    {
+      "first_name": "Rue",
+      "last_name": "Bennett",
+      "accounts": [
+        {
+          "type": "ira",
+          "value": 150
+        },
+        {
+          "type": "brokerage",
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "first_name": "Nate",
+      "last_name": "Jacobs",
+      "accounts": []
+    },
+    {
+      "first_name": "Jules",
+      "last_name": "Vaughn",
+      "accounts": [
+        {
+          "type": "brokerage",
+          "value": 32500
+        }
+      ]
+    }
+  ],
+  "financial_advisors": [
+    {
+      "name": "Nick Miller",
+      "focus_areas": ["financial independence", "smb"]
+    },
+    {
+      "name": "Jessica Day",
+      "focus_areas": ["retirement", "education"]
+    }
+  ]
+}
