@@ -57,16 +57,16 @@ CANDIDATE: Darrion Banks
 
 If given an expanded time window, I would implement the following improvements among others:
 
-1) Extract the Dockerfile secrets to a .env file; utilize a secrets manager such as AWS Parameter Store.
+1) Extract the Dockerfile secrets to a .env file; utilize a secrets manager such as AWS Parameter Store.  
 2) Implement authorization and authentication.
-    a) Grant administrative powers to financial advisors.
-3) Implement asynchronous data ingestion for larger JSON files.
-    a) Using the patternfi_multiprocesssing.ContextualizedThread class to asynchronously ingest file.
-    b) Update Redis Queue with status.
-    c) Poll Redis Queue for status updates and return to user.
-4) Eliminate repeat code in pytests.
-    a) Add more setup and helper functions.
-    b) Restructure to eliminate need to repeatedly call for app_context.
+    (a) Grant administrative powers to financial advisors.    
+3) Implement asynchronous data ingestion for larger JSON files.  
+    (a) Using the patternfi_multiprocesssing.ContextualizedThread class to asynchronously ingest file.  
+    (b) Update Redis Queue with status.  
+    (c) Poll Redis Queue for status updates and return to user.  
+4) Eliminate repeat code in pytests.  
+    (a) Add more setup and helper functions.  
+    (b) Restructure to eliminate need to repeatedly call for app_context.  
 5) Expand test coverage to minimum 80 percent and verify with SonarQube or another tool.
 6) Implement linting and formatting.
 7) Validate requests and responses with Pydantic models.
