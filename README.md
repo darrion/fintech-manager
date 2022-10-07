@@ -1,8 +1,3 @@
-
-
-# Pattern Technical Interview
-In the language and framework of your choice (preferred: Django, Flask, NodeJS, Ruby on Rails), create an application that reads data from the provided `data.json` file and uses it to respond to requests to an API service.
-
 ## Service Requirements
 The API service should expose a few specific pieces of functionality.
 
@@ -21,10 +16,6 @@ Allow a user to query the service to get all clients assigned to a financial adv
 ## Deliverables
 1. A zip file or repository with instructions to setup and run the api server.
 2. A written document to explain any specific decisions/choices that were made.
-
-# Submission
-
-CANDIDATE: Darrion Banks
 
 ## Database Design
 1) ADVISORS & FOCUS AREAS:
@@ -58,7 +49,7 @@ CANDIDATE: Darrion Banks
 If given an expanded time window, I would implement the following improvements among others:
 
 1) Extract the Dockerfile secrets to a .env file; utilize a secrets manager such as AWS Parameter Store.  
-2) Implement authorization and authentication.
+2) Implement authorization and authentication.  
     (a) Grant administrative powers to financial advisors.    
 3) Implement asynchronous data ingestion for larger JSON files.  
     (a) Using the patternfi_multiprocesssing.ContextualizedThread class to asynchronously ingest file.  
