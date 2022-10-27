@@ -15,7 +15,7 @@ RUN apk add build-base && \
 COPY . .
 
 ENV APP_SETTINGS="config.Config"
-ENV SQLALCHEMY_DATABASE_URI="postgresql://postgres:postgres@patternfi_db:5432/patternfi"
-ENV SQLALCHEMY_DATABASE_URI_TEST="postgresql://postgres:postgres@patternfi_db:5432/patternfi_test"
+ENV SQLALCHEMY_DATABASE_URI="postgresql://postgres:postgres@db:5432/main"
+ENV SQLALCHEMY_DATABASE_URI_TEST="postgresql://postgres:postgres@db:5432/test"
 
 CMD ["gunicorn", "-b", "0.0.0.0:8000", "wsgi:application"]

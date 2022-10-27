@@ -1,8 +1,8 @@
 version: '3.8'
 services:
   db:
-    container_name: patternfi_db
-    build: ./patternfi/database
+    container_name: app_db
+    build: ./app/database
     restart: always
     environment:
       - POSTGRES_USER=postgres
@@ -12,9 +12,9 @@ services:
     volumes: 
       - db:/var/lib/postgresql/data
   app:
-    container_name: patternfi_app
+    container_name: app
     build: 
-      context: ./patternfi
+      context: ./app
       dockerfile: Dockerfile
     ports:
       - '8000:8000'

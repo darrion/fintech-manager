@@ -1,8 +1,8 @@
 version: '3.8'
 services:
   db:
-    container_name: patternfi_db
-    build: ./patternfi/database
+    container_name: db
+    build: ./app/database
     restart: always
     environment:
       - POSTGRES_USER=postgres

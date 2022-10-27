@@ -1,2 +1,2 @@
-CREATE DATABASE patternfi_test;
-CREATE DATABASE patternfi;
+CREATE DATABASE test;
+CREATE DATABASE main;

@@ -52,7 +52,7 @@ If given an expanded time window, I would implement the following improvements a
 2) Implement authorization and authentication.  
     (a) Grant administrative powers to financial advisors.    
 3) Implement asynchronous data ingestion for larger JSON files.  
-    (a) Using the patternfi_multiprocesssing.ContextualizedThread class to asynchronously ingest file.  
+    (a) Using the ContextualizedThread class to asynchronously ingest file.  
     (b) Update Redis Queue with status.  
     (c) Poll Redis Queue for status updates and return to user.  
 4) Eliminate repeat code in pytests.  

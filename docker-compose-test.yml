@@ -1,7 +1,7 @@
 services:
   db:
-    container_name: patternfi_db
-    build: ./patternfi/database
+    container_name: db
+    build: ./app/database
     restart: always
     environment:
       - POSTGRES_USER=postgres
@@ -11,9 +11,9 @@ services:
     volumes: 
       - db:/var/lib/postgresql/data
   test:
-    container_name: patternfi_test
+    container_name: test
     build: 
-      context: ./patternfi
+      context: ./app
       dockerfile: Dockerfile-test
 volumes:
   db:
